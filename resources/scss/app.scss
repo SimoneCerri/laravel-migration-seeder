@@ -1,1 +1,92 @@
 @import '~bootstrap/scss/bootstrap';
+
+/*
+###############
+- Debug
+- Common
+- Utilities
+- MediaQuery
+- Header
+- Main
+- Footer
+###############
+*/
+
+
+/* #region Debug */
+
+/* #endregion Debug */
+
+
+/* #region Common */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a
+{
+    text-decoration: none;
+}
+
+main
+{
+    height: 75vh;
+}
+
+/* #endregion Common */
+
+
+/* #region Utilities */
+
+/* #endregion Utilities */
+
+
+/* #region MediaQuery */
+
+/* #region Desktops & Large screens */
+@media screen and (max-width: 1200px) {
+    /* Desktops & Large screens */
+}
+
+/* #endregion Desktops & Large screens */
+
+/* #region Small screens & Laptops */
+@media screen and (max-width: 1024px) {
+    /* Small screens & Laptops */
+}
+
+/* #endregion Small screens & Laptops */
+
+/* #region iPads & Tablets */
+@media screen and (max-width: 768px) {
+    /* iPads & Tablets */
+}
+
+/* #endregion iPads & Tablets */
+
+/* #region Mobile */
+@media screen and (max-width: 480px) {
+    /* Mobile */
+}
+
+/* #endregion Mobile */
+
+/* #endregion MediaQuery */
+
+
+/* #region Header */
+
+/* #endregion Header */
+
+
+/* #region Main */
+
+/* #endregion Main */
+
+
+/* #region Footer */
+
+/* #endregion Footer */

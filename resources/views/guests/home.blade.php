@@ -8,13 +8,13 @@
     <div class="container text-center py-5">
         <div class="row">
             <div class="col">
-                <div class="card">
-                    <div class="card-title">
+                <div class="card bg-secondary border-0">
+                    <div class="card-title bg-dark text-danger">
                         Welcome
                     </div>
                     <div class="card-body">
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque accusamus amet ratione voluptates. Totam commodi aut consequatur deserunt dolore dolorum voluptates animi aliquid recusandae. Quo voluptatum optio quia sed vitae.
+                            C'è chi dice che "quando c'era lui i treni arrivavano sempre in orario", la realtà dei fatti è che quando c'era lui i treni erano vuoti oppure pieni, ma di morti.
                         </p>
                     </div>
                 </div>

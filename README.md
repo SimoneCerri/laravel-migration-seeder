@@ -74,5 +74,13 @@
 - modify `TrainController.php` inside function index
     - `$trains = Train::orderByDesc('id')->get();`
     - `return view('guests.trains.index', compact('trains'));`
-    - create train folder inside guests folder and put `index.blade.php` and `show.blade.php`
-    - extends layout etc etc 
+    - create train folder inside guests folder and put `index.blade.php`
+    - extends layout etc etc
+- modify `TrainController.php` inside function show
+    - `return view('guests.trains.show', compact('train'));`
+    - put `show.blade.php` inside /views/guests/trains
+    - extends layout etc etc
+- make some markup for:
+    - header
+    - footer
+- link routes as well on nav for point the pages you create
