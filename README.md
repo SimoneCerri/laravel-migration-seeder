@@ -18,7 +18,10 @@
 
 ## Steps ##
 
-- `composer create-project laravel/laravel:^10.0 laravel-migration-seeder`
+- create a laravel project `composer create-project laravel/laravel:^10.0 laravel-migration-seeder`
+- WAIT TILL FINISH
+- cd laravel-migration-seeder
+- code .
 - `composer require pacificdev/laravel_9_preset`
 - `php artisan preset:ui bootstrap`
 - rename `vite.config.js` into `vite.config.cjs`
@@ -31,13 +34,14 @@
 - `header.blade.php` and footer.blade.php into partials -> some basic html for both
 - create a DB into phpMyAdmin
 - modify `.env` file with mysql infos
-- `php artisan make:migration create_trains_table`
-- `php artisan migrate` -> yes (if not exist and want to create it)
-- `php artisan migrate:rollback` -> we need to implement some columns
+- create the table `php artisan make:migration create_trains_table`
+- migrate the table to DB `php artisan migrate` -> yes (if DB doesn't exist and want to create it)
+- to go back `php artisan migrate:rollback` -> we need to implement some columns
 - can also do one by one php artisan `make:migration add_company_to_trains_table`
     - then insert in the new file created inside function up `$table->string('company', 20)->after('id');`
     - inside function down `$table->dropColumn('company');`
-- trains table column
+- or `php artisan make:migration update_trains_table --table=trains` as well
+- trains table columns
     - id BIGINT AI PK UQ
     - company VARCHAR(20) NOTNULL
     - departure_station VARCHAR(50)
@@ -50,4 +54,25 @@
     - cancelled BOOLEAN
     - created_at DATETIME
     - update_at DATETIME
-- `php artisan migrate`
+- migrate all the changes `php artisan migrate`
+- create a model for the single train `php artisan make:model Train`
+- use the tinker `php artisan ti`
+- specify the route `App\Models\Train::all()`
+- `$train = new App\Models\Train()`
+- `$train->company = 'Trenitalia'` ->give company
+- `$train->train_code = 'PS0001'` ->give code
+- `$train->cancelled = 0` ->give
+- `$train->departure_station = 'Pisa Centrale'` ->give dep station
+- `$train->arrival_station = 'Viareggio'` ->give arr station
+- `$train->save()`-> true -> corrected save
+- `$train` -> show the new train with all the data insert
+- `exit`
+- create a controller and directly link the Model with -m Train `php artisan make:controller Guests/TrainController -m Train`
+- create routes in `web.php` using the controllers for:
+    - page /trains
+    - page /trains{train}
+- modify `TrainController.php` inside function index
+    - `$trains = Train::orderByDesc('id')->get();`
+    - `return view('guests.trains.index', compact('trains'));`
+    - create train folder inside guests folder and put `index.blade.php` and `show.blade.php`
+    - extends layout etc etc 
