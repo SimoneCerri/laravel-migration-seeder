@@ -13,13 +13,13 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-4 text-warning">
-                        Code: <span class="text-danger">{{ $train->train_code }}</span>
+                        Code: <span class="text-dark">{{ $train->train_code }}</span>
                     </div>
                     <div class="col-4 text-warning">
-                        Carriages: <span class="text-danger">{{ $train->number_of_carriages }}</span>
+                        Carriages: <span class="text-dark">{{ $train->number_of_carriages }}</span>
                     </div>
                     <div class="col-4 text-warning">
-                        On Time: <span class="text-danger">
+                        On Time: <span class="text-dark">
                             @if ($train->on_time)
                                 <span>Yes</span>
                             @else
