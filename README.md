@@ -112,9 +112,9 @@
     ];
     - foreach ($trains as $train) loop with inside
         - $newTrain = new Train();
-        - $newTrain->company = $Train['company'];
+        - $newTrain->company = $train['company'];
         - etc etc for all the variables
-        - %newTrain->save();
+        - %newTrain->save(); ***<--IMPORTANT***
 - `php artisan db:seed --class=TrainsTableSeeder`
 - or we can use Faker:
     - `use Faker\Generator as Faker;`
