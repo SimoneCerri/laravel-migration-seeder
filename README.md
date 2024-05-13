@@ -117,10 +117,11 @@
         - %newTrain->save(); ***<--IMPORTANT***
 - `php artisan db:seed --class=TrainsTableSeeder`
 - or we can use Faker:
-    - `use Faker\Generator as Faker;`
-    - inside run(Faker $faker)
+    - `use Faker\Generator as Faker;` inside file `TrainsTableSeeder.php`
+    - inside function run(Faker $faker)
         - for loop
             - $train = new Train();
             - $train->company = $faker->bothify('');
-            - etc etc 
+            - etc etc
+            - $train->save(); ***<--IMPORTANT***
 - `php artisan db:seed --class=TrainsTableSeeder`
