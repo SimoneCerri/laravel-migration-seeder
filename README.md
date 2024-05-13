@@ -15,6 +15,10 @@
 
 2. Inserite inizialmente i dati tramite PhpMyAdmin o artisan tinker per chi ne ha capito l'utilizzo.
 3. Create il modello Model relativo alla migrazione che avete predisposto al fine di mappare la tabelle del db ed un Controller per mostrare nella home page tutti i treni che sono in partenza dalla data odierna.
+4. Aggiungiamo un seeder per la classe Train usando un array di dati fittizzi fatta a mano.
+
+## BONUS: ##
+- Implementare il seeder tramite FakerPHP
 
 ## Steps ##
 
@@ -84,3 +88,39 @@
     - header
     - footer
 - link routes as well on nav for point the pages you create
+- create a seeder `php artisan make:seeder TrainsTableSeeder`
+- inside run function in `TrainsTableSeeder.php`
+    - `use App\Models\Train;`
+    - `$trains = config('db.trains')` where i put that array
+    return = 
+    [   
+        'trains' =>
+        [
+            [
+                'key' => 'value',
+                'key' => 'value',
+                'key' => 'value',
+                'key' => 'value',
+            ],
+            [
+                'key' => 'value',
+                'key' => 'value',
+                'key' => 'value',
+                'key' => 'value',
+            ],
+        ];
+    ];
+    - foreach ($trains as $train) loop with inside
+        - $newTrain = new Train();
+        - $newTrain->company = $Train['company'];
+        - etc etc for all the variables
+        - %newTrain->save();
+- `php artisan db:seed --class=TrainsTableSeeder`
+- or we can use Faker:
+    - `use Faker\Generator as Faker;`
+    - inside run(Faker $faker)
+        - for loop
+            - $train = new Train();
+            - $train->company = $faker->bothify('');
+            - etc etc 
+- `php artisan db:seed --class=TrainsTableSeeder`
